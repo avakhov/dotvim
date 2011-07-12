@@ -13,6 +13,8 @@ colorscheme custom
 set laststatus=2
 set fileformats=unix,dos
 set cmdheight=1
+filetype plugin on
+filetype plugin indent on
 
 " insert empty lines in normal mode (like o, O)
 nnoremap - o<esc>
@@ -31,9 +33,6 @@ set ic
 set tabstop=2
 set shiftwidth=2
 set et
-set cin
-set autoindent
-set smartindent
 
 " Line numbers
 set nonumber
