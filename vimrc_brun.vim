@@ -67,3 +67,12 @@ command! Lcd :lcd /usr/local/lib/ruby/gems/1.8/gems/
 nmap <F5> :NERDTreeToggle<cr>
 vmap <F5> <esc>:NERDTreeToggle<cr>i
 imap <F5> <esc>:NERDTreeToggle<cr>i
+
+" to cursor line position (see /etc/vim/vimrc)
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
+
+" set full file info [http://www.vim.org/tips/tip.php?tip_id=145]
+set statusline=%<%f%h%m%r\ %.40{getcwd()}%=%{&ff}\ %l,%c%V\ %P 
+
