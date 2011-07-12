@@ -5,7 +5,7 @@ This is my vim settings
 
 pushd ~ && 
   rm -fr .vim && 
-  git clone https://github.com/avakhov/dotvim.git &&
+  git clone https://github.com/avakhov/dotvim.git .vim &&
   echo "source ~/.vim/vimrc_brun.vim" > .vimrc && 
   pushd .vim &&
     ./update_bundles
