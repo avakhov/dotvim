@@ -38,9 +38,11 @@ Dir.chdir bundles_dir do
 
     puts "  Unpacking #{url} into #{dir}"
     if File.exist? dir
-      puts `cd #{dir} && git pull`
+      Dir.chdir dir do
+        system("git pull")
+      end
     else
-      puts `git clone #{url} #{dir}`
+      system("git clone #{url} #{dir}")
     end
   end
 
@@ -54,8 +56,8 @@ Dir.chdir bundles_dir do
   #end
 
   # update helptags
-  Dir["*/doc"].map { |dir| %Q[-c "helptags #{dir}"]}.each_slice(8) do |params|
-    puts %Q[vim #{params.join(' ')} -c"quit"]
-    `vim #{params.join(' ')} -c"quit" 2>&1 > /dev/null`
+  Dir["*/doc"].each do |dir|
+    puts %(vim -e -c"helptags #{dir}" -cquit)
+    system %(echo vim -e -c"helptags #{dir}" -cquit | bash)
   end
 end
