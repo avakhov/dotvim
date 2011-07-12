@@ -1,0 +1,13 @@
+This is my vim settings
+
+For me (initial install):
+
+pushd ~ && 
+	rm -fr .vim && 
+	git clone git@github.com:avakhov/dotvim.git .vim && 
+	echo "source ~/.vim/vimrc_brun" > .vimrc && 
+	pushd .vim &&
+		./update_bundles
+	popd &&
+popd
+
