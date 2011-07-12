@@ -4,6 +4,7 @@ git_bundles = [
   "git://github.com/avakhov/vim-colors.git",
   "git://github.com/tpope/vim-rails.git",
   "git://github.com/scrooloose/nerdtree.git",
+  "https://github.com/tomtom/tcomment_vim.git"
 ]
 
 vim_org_scripts = [
