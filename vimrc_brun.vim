@@ -76,3 +76,5 @@ endif
 " set full file info [http://www.vim.org/tips/tip.php?tip_id=145]
 set statusline=%<%f%h%m%r\ %.40{getcwd()}%=%{&ff}\ %l,%c%V\ %P 
 
+" Search by rails project
+command! -nargs=1 Fi :vim <args> app/** lib/** test/** config/**/*.rb config/**/*.yml db/migrate/** public/javascripts/** public/stylesheets/**
