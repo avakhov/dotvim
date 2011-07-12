@@ -4,8 +4,8 @@ This is my vim settings
 == Installation
 
 pushd ~ && 
-  rm -fr .vim && https://github.com/avakhov/dotvim.git &&
-  git clone 
+  rm -fr .vim && 
+  git clone https://github.com/avakhov/dotvim.git &&
   echo "source ~/.vim/vimrc_brun.vim" > .vimrc && 
   pushd .vim &&
     ./update_bundles
