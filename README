@@ -1,6 +1,19 @@
 This is my vim settings
 
-For me (initial install):
+
+== Installation
+
+pushd ~ && 
+  rm -fr .vim && https://github.com/avakhov/dotvim.git &&
+  git clone 
+  echo "source ~/.vim/vimrc_brun.vim" > .vimrc && 
+  pushd .vim &&
+    ./update_bundles
+  popd &&
+popd
+
+
+== Installation for me:
 
 pushd ~ && 
   rm -fr .vim && 
@@ -11,3 +24,7 @@ pushd ~ &&
   popd &&
 popd
 
+
+== Update
+
+./update_bundles
