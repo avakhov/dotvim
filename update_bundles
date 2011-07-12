@@ -3,15 +3,13 @@
 git_bundles = [
   "git://github.com/avakhov/vim-colors.git",
   "git://github.com/avakhov/vim-rails.git",
+  "git://github.com/avakhov/snipmate.vim.git",
   "git://github.com/scrooloose/nerdtree.git",
   "https://github.com/tomtom/tcomment_vim.git",
-  "git://github.com/avakhov/snipmate.vim.git",
 
   # sandbox
   "git://github.com/tpope/vim-surround.git",
-  "git://github.com/tpope/vim-repeat.git",
-  "git://github.com/tpope/vim-fugitive.git",
-  "https://github.com/gregsexton/gitv.git",
+  "git://github.com/tpope/vim-repeat.git"
 ]
 
 vim_org_scripts = [
@@ -23,8 +21,13 @@ require 'fileutils'
 require 'open-uri'
 
 bundles_dir = File.expand_path("../bundle", __FILE__)
-
 FileUtils.mkdir_p bundles_dir
+
+if ARGV.first == 'me'
+  git_bundles.map! do |bundle|
+    bundle.sub('git://github.com/', 'git@github.com:')
+  end
+end
 
 Dir.chdir bundles_dir do
   puts "Remove obsolete"
