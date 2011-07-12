@@ -56,5 +56,7 @@ end
 # update helptags
 Dir["*/doc"].map { |dir| %Q[-c "helptags #{dir}"]}.each_slice(8) do |params|
   puts %Q[vim #{params.join(' ')} -c"quit"]
-  `vim #{params.join(' ')} -c"quit"`
+  `vim #{params.join(' ')} -c"quit" 2>&1 > /dev/null`
 end
+
+puts "done."
