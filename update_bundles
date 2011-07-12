@@ -25,38 +25,37 @@ require 'open-uri'
 bundles_dir = File.expand_path("../bundle", __FILE__)
 
 FileUtils.mkdir_p bundles_dir
-FileUtils.cd(bundles_dir)
 
-puts "Remove obsolete"
-(Dir["*"] - git_bundles.map{|g| File.basename(g, '.git')}).each do |dir|
-  puts "  rm -fr #{dir}"
-  FileUtils.rm_rf dir
-end
+Dir.chdir bundles_dir do
+  puts "Remove obsolete"
+  (Dir["*"] - git_bundles.map{|g| File.basename(g, '.git')}).each do |dir|
+    puts "  rm -fr #{dir}"
+    FileUtils.rm_rf dir
+  end
 
-git_bundles.each do |url|
-  dir = url.split('/').last.sub(/\.git$/, '')
+  git_bundles.each do |url|
+    dir = url.split('/').last.sub(/\.git$/, '')
 
-  puts "  Unpacking #{url} into #{dir}"
-  if File.exist? dir
-    puts `cd #{dir} && git pull`
-  else
-    puts `git clone #{url} #{dir}`
+    puts "  Unpacking #{url} into #{dir}"
+    if File.exist? dir
+      puts `cd #{dir} && git pull`
+    else
+      puts `git clone #{url} #{dir}`
+    end
+  end
+
+  #vim_org_scripts.each do |name, script_id, script_type|
+  #  puts "  Downloading #{name}"
+  #  local_file = File.join(name, script_type, "#{name}.vim")
+  #  FileUtils.mkdir_p(File.dirname(local_file))
+  #  File.open(local_file, "w") do |file|
+  #    file << open("http://www.vim.org/scripts/download_script.php?src_id=#{script_id}").read
+  #  end
+  #end
+
+  # update helptags
+  Dir["*/doc"].map { |dir| %Q[-c "helptags #{dir}"]}.each_slice(8) do |params|
+    puts %Q[vim #{params.join(' ')} -c"quit"]
+    `vim #{params.join(' ')} -c"quit" 2>&1 > /dev/null`
   end
 end
-
-#vim_org_scripts.each do |name, script_id, script_type|
-#  puts "  Downloading #{name}"
-#  local_file = File.join(name, script_type, "#{name}.vim")
-#  FileUtils.mkdir_p(File.dirname(local_file))
-#  File.open(local_file, "w") do |file|
-#    file << open("http://www.vim.org/scripts/download_script.php?src_id=#{script_id}").read
-#  end
-#end
-
-# update helptags
-Dir["*/doc"].map { |dir| %Q[-c "helptags #{dir}"]}.each_slice(8) do |params|
-  puts %Q[vim #{params.join(' ')} -c"quit"]
-  `vim #{params.join(' ')} -c"quit" 2>&1 > /dev/null`
-end
-
-puts "done."
