@@ -73,12 +73,11 @@ let NERDTreeShowHidden=1
 nmap <F6> :!ruby %<cr>
 imap <F6> <esc>:!ruby %<cr>
 
-" vim-git plugin mapping. Play with winheight to fill git windows all screen
-" (use ZZ - to leave this window)
-nmap <F7> :set wh=999<cr>:GitStatus<cr>:set wh=1<cr>
-nmap <F7> <esc>:set wh=999<cr>:GitStatus<cr>:set wh=1<cr>
-nmap <F8> :set wh=999<cr>:GitDiff<cr>:set wh=1<cr>
-nmap <F8> <esc>:set wh=999<cr>:GitDiff<cr>:set wh=1<cr>
+" vim-git mapping
+nmap <F7> <Leader>gs
+nmap <F7> <esc><Leader>gs
+nmap <F8> <Leader>gd
+nmap <F8> <esc><Leader>gd
 
 " to cursor line position (see /etc/vim/vimrc)
 if has("autocmd")
