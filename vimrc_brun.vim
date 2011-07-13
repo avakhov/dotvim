@@ -12,7 +12,7 @@ set wh=1
 colorscheme custom
 set laststatus=2
 set fileformats=unix,dos
-set cmdheight=1
+set cmdheight=2
 filetype plugin on
 filetype plugin indent on
 
@@ -54,7 +54,7 @@ if has("gui_running")
   if hostname() == 'mama-ubuntik'
     set lines=39
   else
-    set lines=32
+    set lines=35
     set columns=138
   end
   winp 0 0
@@ -68,6 +68,10 @@ nmap <F5> :NERDTreeToggle<cr>
 vmap <F5> <esc>:NERDTreeToggle<cr>i
 imap <F5> <esc>:NERDTreeToggle<cr>i
 let NERDTreeShowHidden=1
+
+" execute current ruby script
+nmap <F6> :!ruby %<cr>
+imap <F6> <esc>:!ruby %<cr>
 
 " to cursor line position (see /etc/vim/vimrc)
 if has("autocmd")
