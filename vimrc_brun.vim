@@ -67,6 +67,7 @@ command! Lcd :lcd /usr/local/lib/ruby/gems/1.8/gems/
 nmap <F5> :NERDTreeToggle<cr>
 vmap <F5> <esc>:NERDTreeToggle<cr>i
 imap <F5> <esc>:NERDTreeToggle<cr>i
+let NERDTreeShowHidden=1
 
 " to cursor line position (see /etc/vim/vimrc)
 if has("autocmd")
