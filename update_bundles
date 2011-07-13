@@ -60,8 +60,8 @@ Dir.chdir bundles_dir do
   #end
 
   # update helptags
-  Dir["*/doc"].each do |dir|
-    puts %(vim -e -c"helptags #{dir}" -cquit)
-    system %(echo vim -e -c"helptags #{dir}" -cquit | bash)
-  end
+  vim_helptags = Dir["*/doc"].map{|d| %(-c"helptags #{d}")}.join(" ")
+  cmd = "vim -e #{vim_helptags} -cquit"
+  puts cmd
+  `#{cmd}`
 end
