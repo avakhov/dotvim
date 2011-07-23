@@ -5,6 +5,7 @@ git_bundles = [
   "git://github.com/avakhov/vim-rails.git",
   "git://github.com/avakhov/snipmate.vim.git",
   "git://github.com/avakhov/git-vim.git",
+  "git://github.com/avakhov/vim-json.git",
   "git://github.com/scrooloose/nerdtree.git",
   "https://github.com/tomtom/tcomment_vim.git",
   "https://github.com/cakebaker/scss-syntax.vim.git",

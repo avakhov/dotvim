@@ -13,6 +13,7 @@ colorscheme custom
 set laststatus=2
 set fileformats=unix,dos
 set cmdheight=1
+filetype off
 filetype plugin on
 filetype plugin indent on
 
