@@ -15,11 +15,6 @@ git_bundles = [
   "git://github.com/tpope/vim-repeat.git",
 ]
 
-vim_org_scripts = [
-#  ["IndexedSearch", "7062",  "plugin"],
-#  ["jquery",        "12107", "syntax"],
-]
-
 require 'fileutils'
 require 'open-uri'
 
@@ -51,15 +46,6 @@ Dir.chdir bundles_dir do
       system("git clone #{url} #{dir}")
     end
   end
-
-  #vim_org_scripts.each do |name, script_id, script_type|
-  #  puts "  Downloading #{name}"
-  #  local_file = File.join(name, script_type, "#{name}.vim")
-  #  FileUtils.mkdir_p(File.dirname(local_file))
-  #  File.open(local_file, "w") do |file|
-  #    file << open("http://www.vim.org/scripts/download_script.php?src_id=#{script_id}").read
-  #  end
-  #end
 
   # update helptags
   vim_helptags = Dir["*/doc"].map{|d| %(-c"helptags #{d}")}.join(" ")
