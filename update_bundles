@@ -10,7 +10,8 @@ git_bundles = [
   "https://github.com/tomtom/tcomment_vim.git",
   "https://github.com/cakebaker/scss-syntax.vim.git",
   "https://github.com/kchmck/vim-coffee-script.git",
-  "https://github.com/vim-scripts/bufferlist.vim.git"
+  "https://github.com/vim-scripts/bufferlist.vim.git",
+  "git://github.com/tpope/vim-markdown.git"
 ]
 
 require 'fileutils'

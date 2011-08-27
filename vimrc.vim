@@ -65,7 +65,7 @@ end
 command! Lcd :lcd /usr/local/lib/ruby/gems/1.8/gems/
 
 " Buffer list
-map <silent> <F3> :call BufferList()<CR>
+map <silent> <C-b> :call BufferList()<CR>
 let g:BufferListWidth = 30 
 let g:BufferListMaxWidth = 50
 
@@ -81,11 +81,11 @@ imap <F6> <esc>:!ruby %<cr>
 
 " vim-git mapping
 nmap <F7> <Leader>gs
-nmap <F7> <esc><Leader>gs
+imap <F7> <esc><Leader>gs
 nmap <F8> <Leader>gd
-nmap <F8> <esc><Leader>gd
+imap <F8> <esc><Leader>gd
 
-" to cursor line position (see /etc/vim/vimrc)
+" remember cursor line (see /etc/vim/vimrc)
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
@@ -94,4 +94,5 @@ endif
 set statusline=%<%f%h%m%r\ %.40{getcwd()}%=%{&ff}\ %l,%c%V\ %P 
 
 " Search by rails project
-command! -nargs=1 Fi :vim <args> app/** lib/** test/** config/**/*.rb config/**/*.yml db/migrate/** public/javascripts/** public/stylesheets/**
+command! -nargs=1 Fi :vim <args> app/** lib/** test/** config/**/*.rb config/**/*.yml db/migrate/** extras/**
+
