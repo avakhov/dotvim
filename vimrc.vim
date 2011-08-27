@@ -65,7 +65,7 @@ end
 command! Lcd :lcd /usr/local/lib/ruby/gems/1.8/gems/
 
 " Buffer list
-map <silent> <C-b> :call BufferList()<CR>
+map <silent> <F3> :call BufferList()<CR>
 let g:BufferListWidth = 30 
 let g:BufferListMaxWidth = 50
 
