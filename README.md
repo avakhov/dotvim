@@ -1,0 +1,36 @@
+# My vim settings
+
+## Installation
+
+```
+  pushd ~
+    rm -fr .vim
+    git clone https://github.com/avakhov/dotvim.git .vim
+    echo "source ~/.vim/vimrc.vim" > .vimrc
+    pushd .vim
+      ./update_bundles
+    popd
+  popd
+```
+
+
+## Installation for me
+
+```
+  pushd ~
+    rm -fr .vim
+    git clone git@github.com:avakhov/dotvim.git .vim
+    echo "source ~/.vim/vimrc.vim" > .vimrc
+    pushd .vim
+      ./update_bundles me
+    popd
+  popd
+```
+
+
+## Update
+
+```
+  cd ~/.vim && ./update_bundles
+```
+
