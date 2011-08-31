@@ -75,15 +75,13 @@ vmap <F5> <esc>:NERDTreeToggle<cr>i
 imap <F5> <esc>:NERDTreeToggle<cr>i
 let NERDTreeShowHidden=1
 
-" execute current ruby script
-nmap <F6> :!ruby %<cr>
-imap <F6> <esc>:!ruby %<cr>
-
 " vim-git mapping
-nmap <F7> <Leader>gs
-imap <F7> <esc><Leader>gs
-nmap <F8> <Leader>gd
-imap <F8> <esc><Leader>gd
+nmap <F6> <Leader>gs
+imap <F6> <esc><Leader>gs
+nmap <F7> <Leader>gd
+imap <F7> <esc><Leader>gd
+nmap <F8> :GitDiffAll<cr>
+imap <F8> <esc>:GitDiffAll<cr>
 
 " remember cursor line (see /etc/vim/vimrc)
 if has("autocmd")
