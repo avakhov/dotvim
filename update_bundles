@@ -2,7 +2,6 @@
 
 git_bundles = [
   "git://github.com/avakhov/vim-colors.git",
-  "git://github.com/avakhov/vim-rails.git",
   "git://github.com/avakhov/snipmate.vim.git",
   "git://github.com/avakhov/vim-json.git",
   "git://github.com/avakhov/vim-yaml.git",
@@ -12,7 +11,8 @@ git_bundles = [
   "https://github.com/cakebaker/scss-syntax.vim.git",
   "https://github.com/kchmck/vim-coffee-script.git",
   "https://github.com/vim-scripts/bufferlist.vim.git",
-  "git://github.com/tpope/vim-markdown.git"
+  "git://github.com/tpope/vim-markdown.git",
+  "git://github.com/tpope/vim-rails.git"
 ]
 
 require 'fileutils'
