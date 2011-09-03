@@ -41,8 +41,8 @@ inoremap <silent> <F4> <C-o>:let &number = !&number<CR>
 nnoremap <silent> <F4> :let &number = !&number<CR>
 
 " open new window or tab
-nmap <F9> :tabnew<Return>
-nmap <F11> <C-W>n
+nmap <F9> :tabedit %<cr>
+nmap <F11> :split<cr>
 
 " Use CTRL-S for file saving
 noremap <C-S>		:update<CR>
