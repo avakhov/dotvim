@@ -44,11 +44,6 @@ nnoremap <silent> <F4> :let &number = !&number<CR>
 nmap <F9> :tabedit %<cr>
 nmap <F11> :split<cr>
 
-" Use CTRL-S for file saving
-noremap <C-S>		:update<CR>
-vnoremap <C-S>		<C-C>:update<CR>
-inoremap <C-S>		<C-O>:update<CR><Esc>
-
 if has("gui_running")
   set guifont=dejavu\ sans\ mono\ 11
   set guioptions-=T
