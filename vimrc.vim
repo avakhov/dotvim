@@ -79,5 +79,4 @@ endif
 set statusline=%<%f%h%m%r\ %.40{getcwd()}%=%{&ff}\ %l,%c%V\ %P 
 
 " Search by rails project
-command! -nargs=1 Fi :vim <args> app/** lib/** test/** config/**/*.rb config/**/*.yml db/migrate/** extras/**
-
+command! -nargs=1 Fi :vim <args> app/** lib/** test/** spec/** config/**/*.rb config/**/*.yml db/migrate/** extras/**
