@@ -1,4 +1,6 @@
 #!/usr/bin/env ruby
+#
+require 'fileutils'
 
 git_bundles = [
   "git://github.com/avakhov/vim-colors.git",
@@ -10,25 +12,14 @@ git_bundles = [
   "git://github.com/tomtom/tcomment_vim.git",
   "git://github.com/cakebaker/scss-syntax.vim.git",
   "git://github.com/kchmck/vim-coffee-script.git",
-  "git://github.com/vim-scripts/bufferlist.vim.git",
   "git://github.com/tpope/vim-markdown.git",
   "git://github.com/tpope/vim-rails.git",
   "git://github.com/tpope/vim-fugitive.git",
-  "git://github.com/vim-ruby/vim-ruby.git",
   "git://github.com/kien/ctrlp.vim"
 ]
 
-require 'fileutils'
-require 'open-uri'
-
 bundles_dir = File.expand_path("../bundle", __FILE__)
 FileUtils.mkdir_p bundles_dir
-
-if ARGV.first == 'me'
-  git_bundles.map! do |bundle|
-    bundle.sub('git://github.com/', 'git@github.com:')
-  end
-end
 
 Dir.chdir bundles_dir do
   puts "Remove obsolete"

@@ -59,11 +59,6 @@ end
 " system ruby gems path
 command! Lcd :lcd /usr/local/lib/ruby/gems/1.8/gems/
 
-" Buffer list
-map <silent> <F3> :call BufferList()<CR>
-let g:BufferListWidth = 30 
-let g:BufferListMaxWidth = 50
-
 " NERD tree
 nmap <F5> :NERDTreeToggle<cr>
 vmap <F5> <esc>:NERDTreeToggle<cr>i
