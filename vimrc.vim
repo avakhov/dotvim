@@ -47,17 +47,10 @@ nmap <F11> :split<cr>
 if has("gui_running")
   set guifont=dejavu\ sans\ mono\ 11
   set guioptions-=T
-  if hostname() == 'mama-ubuntik'
-    set lines=39
-  else
-    set lines=35
-    set columns=138
-  end
+  set lines=35
+  set columns=138
   winp 0 0
 end
-
-" system ruby gems path
-command! Lcd :lcd /usr/local/lib/ruby/gems/1.8/gems/
 
 " NERD tree
 nmap <F5> :NERDTreeToggle<cr>
