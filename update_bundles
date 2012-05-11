@@ -21,6 +21,12 @@ git_bundles = [
 bundles_dir = File.expand_path("../bundle", __FILE__)
 FileUtils.mkdir_p bundles_dir
 
+if ARGV.first == 'me'
+  git_bundles.map! do |bundle|
+    bundle.sub('git://github.com/avakhov', 'git@github.com:avakhov')
+  end
+end
+
 Dir.chdir bundles_dir do
   puts "Remove obsolete"
   (Dir["*"] - git_bundles.map{|g| File.basename(g, '.git')}).each do |dir|
