@@ -15,7 +15,8 @@ git_bundles = [
   "git://github.com/tpope/vim-markdown.git",
   "git://github.com/tpope/vim-rails.git",
   "git://github.com/tpope/vim-fugitive.git",
-  "git://github.com/kien/ctrlp.vim"
+  "git://github.com/kien/ctrlp.vim",
+  "git://github.com/juvenn/mustache.vim.git"
 ]
 
 bundles_dir = File.expand_path("../bundle", __FILE__)
