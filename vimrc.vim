@@ -40,6 +40,9 @@ set nonumber
 inoremap <silent> <F4> <C-o>:let &number = !&number<CR>
 nnoremap <silent> <F4> :let &number = !&number<CR>
 
+nmap <F6> :set foldmethod=syntax<cr>:set foldlevel=1<cr>
+nmap <F7> :set foldmethod=manual<cr>zR<cr>
+
 " open new window or tab
 nmap <F9> :tabedit %<cr>
 nmap <F11> :split<cr>
