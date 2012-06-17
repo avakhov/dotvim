@@ -1,11 +1,12 @@
 set nocompatible
 syntax on
 
-" backup&swap
+" Backup and swap
 set noswapfile
 set nobackup
 set nowritebackup
 
+" Pathogen and basic settings
 call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
 set wh=1
@@ -17,20 +18,20 @@ filetype off
 filetype plugin on
 filetype plugin indent on
 
-" insert empty lines in normal mode (like o, O)
+" Insert empty lines in normal mode
 nnoremap - o<esc>
 nnoremap _ O<esc>
 
-" auto save
+" Auto save
 set autowrite
 set autowriteall
 
-" search options
+" Search options
 set is
 set hls
 set ic
 
-" tab options
+" Tab options
 set tabstop=2
 set shiftwidth=2
 set et
@@ -40,13 +41,15 @@ set nonumber
 inoremap <silent> <F4> <C-o>:let &number = !&number<CR>
 nnoremap <silent> <F4> :let &number = !&number<CR>
 
+" Folding
 nmap <F6> :set foldmethod=syntax<cr>:set foldlevel=1<cr>
 nmap <F7> :set foldmethod=manual<cr>zR<cr>
 
-" open new window or tab
+" Open new window or tab
 nmap <F9> :tabedit %<cr>
 nmap <F11> :split<cr>
 
+" Visual settings for gui
 if has("gui_running")
   set guifont=dejavu\ sans\ mono\ 11
   set guioptions-=T
@@ -69,5 +72,5 @@ endif
 " set full file info [http://www.vim.org/tips/tip.php?tip_id=145]
 set statusline=%<%f%h%m%r\ %.40{getcwd()}%=%{&ff}\ %l,%c%V\ %P 
 
-" Search by rails project
+" Search by typical rails project
 command! -nargs=1 Fi :vim <args> app/** lib/** test/** spec/** config/**/*.rb config/**/*.yml db/migrate/** extras/**
