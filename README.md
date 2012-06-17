@@ -16,6 +16,6 @@
 ## Update
 
 ```
-  cd ~/.vim && ./update_bundles
+  cd ~/.vim && git pull && ./update_bundles
 ```
 
