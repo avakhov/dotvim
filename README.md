@@ -5,7 +5,7 @@
 ```
   pushd ~
     rm -fr .vim
-    git clone git://github.com/avakhov/dotvim.git
+    git clone git://github.com/avakhov/dotvim.git .vim
     echo "source ~/.vim/vimrc.vim" > .vimrc
     pushd .vim
       ./update_bundles
