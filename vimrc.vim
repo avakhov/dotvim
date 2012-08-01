@@ -37,19 +37,6 @@ set tabstop=2
 set shiftwidth=2
 set et
 
-" Line numbers
-set nonumber
-inoremap <silent> <F4> <C-o>:let &number = !&number<CR>
-nnoremap <silent> <F4> :let &number = !&number<CR>
-
-" Folding
-nmap <F6> :set foldmethod=syntax<cr>:set foldlevel=1<cr>
-nmap <F7> :set foldmethod=manual<cr>zR<cr>
-
-" Open new window or tab
-nmap <F9> :tabedit %<cr>
-nmap <F11> :split<cr>
-
 " Visual settings for gui
 if has("gui_running")
   set guifont=dejavu\ sans\ mono\ 11
@@ -59,10 +46,20 @@ if has("gui_running")
   winp 0 0
 end
 
+" Line numbers
+set nonumber
+inoremap <silent> <leader>n <C-o>:let &number = !&number<CR>
+nnoremap <silent> <leader>n :let &number = !&number<CR>
+
+" Folding
+nmap <leader>s :set foldmethod=syntax<cr>:set foldlevel=1<cr>
+nmap <leader>m :set foldmethod=manual<cr>zR<cr>
+
+" Open new window or tab
+nmap <leader>c :tabedit %<cr>
+
 " NERD tree
-nmap <F5> :NERDTreeToggle<cr>
-vmap <F5> <esc>:NERDTreeToggle<cr>i
-imap <F5> <esc>:NERDTreeToggle<cr>i
+nmap <leader>t :NERDTreeToggle<cr>
 let NERDTreeShowHidden=1
 
 " remember cursor line (see /etc/vim/vimrc)
@@ -70,11 +67,5 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
-" set full file info [http://www.vim.org/tips/tip.php?tip_id=145]
-set statusline=%<%f%h%m%r\ %.40{getcwd()}%=%{&ff}\ %l,%c%V\ %P 
-
 " Search by typical rails project
 command! -nargs=1 Fi :vim <args> app/** lib/** test/** spec/** config/**/*.rb config/**/*.yml db/migrate/** extras/**
-
-" Use ack.vim plugin
-let g:ackprg="ack-grep -H --nocolor --nogroup --column"
