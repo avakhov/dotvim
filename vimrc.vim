@@ -49,7 +49,7 @@ end
 if has("gui_macvim")
   set guifont=Monaco:h16
   set guioptions-=T
-  set lines=35
+  set lines=39
   set columns=138
   winp 0 0
 end
