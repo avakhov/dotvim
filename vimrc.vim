@@ -46,6 +46,14 @@ if has("gui_running")
   winp 0 0
 end
 
+if has("gui_macvim")
+  set guifont=Monaco:h16
+  set guioptions-=T
+  set lines=35
+  set columns=138
+  winp 0 0
+end
+
 " Line numbers
 set nonumber
 inoremap <silent> <leader>n <C-o>:let &number = !&number<CR>
