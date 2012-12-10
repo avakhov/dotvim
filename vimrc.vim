@@ -70,6 +70,11 @@ nmap <leader>c :tabedit %<cr>
 nmap <leader>t :NERDTreeToggle<cr>
 let NERDTreeShowHidden=1
 
+" CtrlP
+nmap <leader>p :CtrlP<cr>
+nmap <leader>m :CtrlPMRU<cr>
+nmap <leader>b :CtrlPBuffer<cr>
+
 " remember cursor line (see /etc/vim/vimrc)
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
