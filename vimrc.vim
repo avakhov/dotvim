@@ -21,6 +21,12 @@ filetype indent on
 filetype plugin on
 filetype plugin indent on
 
+" UltiSnips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+
 " Auto save
 set autowrite
 set autowriteall
