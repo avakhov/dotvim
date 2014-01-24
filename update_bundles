@@ -1,46 +1,75 @@
-#!/usr/bin/env ruby
+#!/bin/bash
 
-require 'fileutils'
+git_bundles=(
+  git://github.com/avakhov/vim-colors.git
+  git://github.com/cakebaker/scss-syntax.vim.git
+  git://github.com/kchmck/vim-coffee-script.git
+  git://github.com/kien/ctrlp.vim
+  git://github.com/scrooloose/nerdtree.git
+  git://github.com/tomtom/tcomment_vim.git
+  git://github.com/tpope/vim-fugitive.git
+  git://github.com/tpope/vim-rails.git
+  git://github.com/SirVer/ultisnips
+  git://github.com/vim-ruby/vim-ruby
+)
 
-git_bundles = [
-  "git://github.com/avakhov/vim-colors.git",
-  "git://github.com/cakebaker/scss-syntax.vim.git",
-  "git://github.com/kchmck/vim-coffee-script.git",
-  "git://github.com/kien/ctrlp.vim",
-  "git://github.com/scrooloose/nerdtree.git",
-  "git://github.com/tomtom/tcomment_vim.git",
-  "git://github.com/tpope/vim-fugitive.git",
-  "git://github.com/tpope/vim-rails.git",
-  "git://github.com/SirVer/ultisnips",
-  "git://github.com/vim-ruby/vim-ruby"
-]
+echo Remove obsolete ...
+for folder in `ls -1 bundle`
+do
+  remove=y
+  for bundle in ${git_bundles[*]}
+  do
+    bundle_parts=(${bundle//\// })
+    bundle_folder=${bundle_parts[${#bundle_parts[@]} - 1]%.git}
+    if [ "$bundle_folder" = "$folder" ]; then
+      remove=n
+    fi
+  done
 
-bundles_dir = File.expand_path("../bundle", __FILE__)
-FileUtils.mkdir_p bundles_dir
+  if [ "$remove" = "y" ]; then
+    echo Remove bundle/$folder
+    rm -fr bundle/$folder
+  fi
+done
+echo Remove obsolete ... OK
 
-Dir.chdir bundles_dir do
-  puts "Remove obsolete"
-  (Dir["*"] - git_bundles.map{|g| File.basename(g, '.git')}).each do |dir|
-    puts "  rm -fr #{dir}"
-    FileUtils.rm_rf dir
-  end
+# echo Update existing ...
+# for folder in `ls -1 bundle`
+# do
+#   echo Folder: bundle/$folder
+#   pushd bundle/$folder > /dev/null
+#   git pull
+#   popd > /dev/null
+# done
+# echo Update existing ... OK
 
-  git_bundles.each do |url|
-    dir = url.split('/').last.sub(/\.git$/, '')
+echo Clone new ...
+for bundle in ${git_bundles[*]}
+do
+  install=y
+  for folder in `ls -1 bundle`
+  do
+    bundle_parts=(${bundle//\// })
+    bundle_folder=${bundle_parts[${#bundle_parts[@]} - 1]%.git}
+    if [ "$bundle_folder" = "$folder" ]; then
+      install=n
+    fi
+  done
 
-    puts "  Unpacking #{url} into #{dir}"
-    if File.exist? dir
-      Dir.chdir dir do
-        system("git pull")
-      end
-    else
-      system("git clone #{url} #{dir}")
-    end
-  end
+  if [ "$install" = "y" ]; then
+    pushd bundle > /dev/null
+    git clone $bundle
+    popd > /dev/null
+  fi
+done
+echo Clone new ... OK
 
-  # update helptags
-  vim_helptags = Dir["*/doc"].map{|d| %(-c"helptags #{d}")}.join(" ")
-  cmd = "vim -e #{vim_helptags} -cquit"
-  puts cmd
-  `#{cmd}`
-end
+echo Update helptags ...
+vim_options=
+for doc in `find bundle -name doc`
+do
+  vim_options="$vim_options -c\"helptags $doc\""
+done
+cmd="vim -e $vim_options -cquit"
+bash -c "${cmd}"
+echo Update helptags ... OK
