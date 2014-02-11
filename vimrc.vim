@@ -72,7 +72,7 @@ if has("autocmd")
 endif
 
 " Search in typical rails project
-command! -nargs=1 Fi :vim <args> app/** test/** spec/** config/** db/migrate/**
+command! -nargs=1 Fi :vim <args> bin/** app/** test/** spec/** config/** db/migrate/**
 
 " Open file on linenumber
 function! s:gotoline()
