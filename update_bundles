@@ -12,6 +12,7 @@ git_bundles=(
   git://github.com/tpope/vim-rails.git
   git://github.com/SirVer/ultisnips
   git://github.com/vim-ruby/vim-ruby
+  git://github.com/jnwhiteh/vim-golang
 )
 
 mkdir -p bundle
