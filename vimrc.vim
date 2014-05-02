@@ -59,6 +59,9 @@ if has("gui_macvim")
   set guifont=Monaco:h16
 end
 
+" I like PostgreSQL
+let g:sql_type_default = 'pgsql'
+
 " Open new tab
 nmap <leader>c :tabedit %<cr>
 

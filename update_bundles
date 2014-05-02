@@ -13,6 +13,7 @@ git_bundles=(
   git://github.com/SirVer/ultisnips
   git://github.com/vim-ruby/vim-ruby
   git://github.com/jnwhiteh/vim-golang
+  git://github.com/exu/pgsql.vim
 )
 
 mkdir -p bundle
