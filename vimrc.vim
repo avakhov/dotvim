@@ -51,7 +51,7 @@ nnoremap _ O<esc>
 if has("gui_running")
   set guifont=dejavu\ sans\ mono\ 11
   set guioptions-=T
-  set lines=39
+  set lines=36
   set columns=138
   winp 0 0
 end
