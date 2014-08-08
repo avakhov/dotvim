@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cd `dirname $0`
+
 git_bundles=(
   git://github.com/avakhov/vim-colors.git
   git://github.com/avakhov/vim-yaml.git
@@ -38,15 +40,15 @@ do
 done
 echo Remove obsolete ... OK
 
-# echo Update existing ...
-# for folder in `ls -1 bundle`
-# do
-#   echo Folder: bundle/$folder
-#   pushd bundle/$folder > /dev/null
-#   git pull
-#   popd > /dev/null
-# done
-# echo Update existing ... OK
+echo Update existing ...
+for folder in `ls -1 bundle`
+do
+  echo Folder: bundle/$folder
+  pushd bundle/$folder > /dev/null
+  git pull
+  popd > /dev/null
+done
+echo Update existing ... OK
 
 echo Clone new ...
 for bundle in ${git_bundles[*]}
