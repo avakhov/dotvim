@@ -61,9 +61,6 @@ end
 " I like PostgreSQL
 let g:sql_type_default = 'pgsql'
 
-" Open new tab
-nmap <leader>c :tabedit %<cr>
-
 " NERD tree
 nmap <leader>t :NERDTreeToggle<cr>
 let NERDTreeShowHidden=1
