@@ -5,7 +5,6 @@ syntax on
 set noswapfile
 set nobackup
 set nowritebackup
-
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 " Pathogen and basic settings
@@ -100,3 +99,6 @@ endfunction
 
 autocmd! BufNewFile *:* nested call s:gotoline()
 autocmd! BufRead *:* nested call s:gotoline()
+
+" EasyBuffer
+nmap <leader>b :EasyBuffer<cr>

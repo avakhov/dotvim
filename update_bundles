@@ -16,6 +16,7 @@ git_bundles=(
   git://github.com/vim-ruby/vim-ruby
   git://github.com/jnwhiteh/vim-golang
   git://github.com/exu/pgsql.vim
+  git://github.com/troydm/easybuffer.vim
 )
 
 mkdir -p bundle
