@@ -27,6 +27,7 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " CtrlP
 let g:ctrlp_open_new_file = 'r'
+nmap <C-b> :CtrlPBuffer<cr>
 
 " Auto save
 set autowrite
