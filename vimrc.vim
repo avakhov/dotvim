@@ -100,3 +100,6 @@ autocmd! BufRead *:* nested call s:gotoline()
 
 " EasyBuffer
 nmap <leader>b :EasyBuffer<cr>
+
+" Crazy MacVim
+set visualbell t_vb=
