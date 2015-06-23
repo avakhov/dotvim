@@ -19,6 +19,7 @@ git_bundles=(
   git://github.com/troydm/easybuffer.vim
   git://github.com/mustache/vim-mustache-handlebars
   git://github.com/rust-lang/rust.vim
+  git://github.com/slim-template/vim-slim
 )
 
 mkdir -p bundle
