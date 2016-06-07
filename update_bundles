@@ -18,6 +18,7 @@ git_bundles=(
   git://github.com/mustache/vim-mustache-handlebars
   git://github.com/rust-lang/rust.vim
   git://github.com/slim-template/vim-slim
+  git://github.com/digitaltoad/vim-pug
 )
 
 mkdir -p bundle
