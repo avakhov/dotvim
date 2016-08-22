@@ -21,6 +21,7 @@ git_bundles=(
   git://github.com/digitaltoad/vim-pug
   git://github.com/pangloss/vim-javascript.git
   git://github.com/hashivim/vim-terraform
+  git://github.com/b4b4r07/vim-hcl
 )
 
 mkdir -p bundle
