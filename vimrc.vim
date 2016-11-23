@@ -51,9 +51,9 @@ nnoremap _ O<esc>
 if has("gui_running")
   set guifont=dejavu\ sans\ mono\ 11
   set guioptions-=T
-  set lines=39
-  set columns=139
-  winp 0 0
+  set lines=50
+  set columns=188
+  winp 1 1
 end
 if has("gui_macvim")
   set guifont=Monaco:h16
