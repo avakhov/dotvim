@@ -103,3 +103,8 @@ nmap <leader>b :EasyBuffer<cr>
 
 " Crazy MacVim
 set visualbell t_vb=
+
+" ag
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif

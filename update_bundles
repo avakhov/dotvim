@@ -23,6 +23,7 @@ git_bundles=(
   git://github.com/hashivim/vim-terraform
   git://github.com/b4b4r07/vim-hcl
   git://github.com/mxw/vim-jsx
+  git://github.com/mileszs/ack.vim
 )
 
 mkdir -p bundle
