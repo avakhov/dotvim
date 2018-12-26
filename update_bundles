@@ -25,6 +25,7 @@ git_bundles=(
   git://github.com/mxw/vim-jsx
   git://github.com/mileszs/ack.vim
   git://github.com/pearofducks/ansible-vim
+  git://github.com/rhysd/vim-crystal
 )
 
 mkdir -p bundle
