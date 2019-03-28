@@ -108,3 +108,6 @@ set visualbell t_vb=
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
+
+" redraw!
+command! Rd redraw!
