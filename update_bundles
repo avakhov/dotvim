@@ -12,7 +12,6 @@ git_bundles=(
   git://github.com/tomtom/tcomment_vim.git
   git://github.com/tpope/vim-fugitive.git
   git://github.com/tpope/vim-rails.git
-  git://github.com/SirVer/ultisnips
   git://github.com/vim-ruby/vim-ruby
   git://github.com/mustache/vim-mustache-handlebars
   git://github.com/rust-lang/rust.vim
@@ -27,6 +26,7 @@ git_bundles=(
   git://github.com/rhysd/vim-crystal
   git://github.com/posva/vim-vue
 )
+#git://github.com/SirVer/ultisnips
 
 mkdir -p bundle
 

@@ -1,5 +1,7 @@
 set nocompatible
 syntax on
+let g:pymode_python = 'python3'
+
 
 " Backup and swap
 set noswapfile
@@ -21,9 +23,12 @@ filetype plugin on
 filetype plugin indent on
 
 " UltiSnips
+"
+let g:UltiSnipsUsePythonVersion = 3
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
 
 " CtrlP
 let g:ctrlp_open_new_file = 'r'
