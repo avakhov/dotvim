@@ -5,26 +5,27 @@ cd `dirname $0`
 git_bundles=(
   git://github.com/avakhov/vim-colors.git
   git://github.com/avakhov/vim-yaml.git
+  git://github.com/b4b4r07/vim-hcl
   git://github.com/cakebaker/scss-syntax.vim.git
+  git://github.com/digitaltoad/vim-pug
+  git://github.com/editorconfig/editorconfig-vim
+  git://github.com/hashivim/vim-terraform
   git://github.com/kchmck/vim-coffee-script.git
   git://github.com/kien/ctrlp.vim
+  git://github.com/mileszs/ack.vim
+  git://github.com/mustache/vim-mustache-handlebars
+  git://github.com/mxw/vim-jsx
+  git://github.com/pangloss/vim-javascript.git
+  git://github.com/pearofducks/ansible-vim
+  git://github.com/posva/vim-vue
+  git://github.com/rhysd/vim-crystal
+  git://github.com/rust-lang/rust.vim
   git://github.com/scrooloose/nerdtree.git
+  git://github.com/slim-template/vim-slim
   git://github.com/tomtom/tcomment_vim.git
   git://github.com/tpope/vim-fugitive.git
   git://github.com/tpope/vim-rails.git
   git://github.com/vim-ruby/vim-ruby
-  git://github.com/mustache/vim-mustache-handlebars
-  git://github.com/rust-lang/rust.vim
-  git://github.com/slim-template/vim-slim
-  git://github.com/digitaltoad/vim-pug
-  git://github.com/pangloss/vim-javascript.git
-  git://github.com/hashivim/vim-terraform
-  git://github.com/b4b4r07/vim-hcl
-  git://github.com/mxw/vim-jsx
-  git://github.com/mileszs/ack.vim
-  git://github.com/pearofducks/ansible-vim
-  git://github.com/rhysd/vim-crystal
-  git://github.com/posva/vim-vue
 )
 #git://github.com/SirVer/ultisnips
 
