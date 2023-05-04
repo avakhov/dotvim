@@ -1,0 +1,95 @@
+#!/bin/bash
+
+cd `dirname $0`
+
+git_bundles=(
+  https://github.com/avakhov/vim-colors.git
+  https://github.com/avakhov/vim-yaml.git
+  https://github.com/b4b4r07/vim-hcl
+  https://github.com/cakebaker/scss-syntax.vim.git
+  https://github.com/digitaltoad/vim-pug
+  https://github.com/editorconfig/editorconfig-vim
+  https://github.com/evanleck/vim-svelte
+  https://github.com/hashivim/vim-terraform
+  https://github.com/kchmck/vim-coffee-script.git
+  https://github.com/kien/ctrlp.vim
+  https://github.com/leafgarland/typescript-vim
+  https://github.com/mileszs/ack.vim
+  https://github.com/mustache/vim-mustache-handlebars
+  https://github.com/mxw/vim-jsx
+  https://github.com/pangloss/vim-javascript.git
+  https://github.com/pearofducks/ansible-vim
+  https://github.com/posva/vim-vue
+  https://github.com/rhysd/vim-crystal
+  https://github.com/rust-lang/rust.vim
+  https://github.com/scrooloose/nerdtree.git
+  https://github.com/slim-template/vim-slim
+  https://github.com/tomtom/tcomment_vim.git
+  https://github.com/tpope/vim-fugitive.git
+  https://github.com/tpope/vim-rails.git
+  https://github.com/vim-ruby/vim-ruby
+)
+#https://github.com/SirVer/ultisnips
+
+mkdir -p bundle
+
+echo Remove obsolete ...
+for folder in `ls -1 bundle`
+do
+  remove=y
+  for bundle in ${git_bundles[*]}
+  do
+    bundle_parts=(${bundle//\// })
+    bundle_folder=${bundle_parts[${#bundle_parts[@]} - 1]%.git}
+    if [ "$bundle_folder" = "$folder" ]; then
+      remove=n
+    fi
+  done
+
+  if [ "$remove" = "y" ]; then
+    echo Remove bundle/$folder
+    rm -fr bundle/$folder
+  fi
+done
+echo Remove obsolete ... OK
+
+echo Update existing ...
+for folder in `ls -1 bundle`
+do
+  echo Folder: bundle/$folder
+  pushd bundle/$folder > /dev/null
+  git pull
+  popd > /dev/null
+done
+echo Update existing ... OK
+
+echo Clone new ...
+for bundle in ${git_bundles[*]}
+do
+  install=y
+  for folder in `ls -1 bundle`
+  do
+    bundle_parts=(${bundle//\// })
+    bundle_folder=${bundle_parts[${#bundle_parts[@]} - 1]%.git}
+    if [ "$bundle_folder" = "$folder" ]; then
+      install=n
+    fi
+  done
+
+  if [ "$install" = "y" ]; then
+    pushd bundle > /dev/null
+    git clone $bundle
+    popd > /dev/null
+  fi
+done
+echo Clone new ... OK
+
+echo Update helptags ...
+vim_options=
+for doc in `find bundle -name doc`
+do
+  vim_options="$vim_options -c\"helptags $doc\""
+done
+cmd="vim -e $vim_options -cquit"
+bash -c "${cmd}"
+echo Update helptags ... OK
