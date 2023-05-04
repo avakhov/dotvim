@@ -1,2 +1,2 @@
 set nocompatible
-set cc=80
+set cc=120
