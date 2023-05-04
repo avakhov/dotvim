@@ -1,5 +1,5 @@
 if exists(':GuiFont')
-  GuiFont 'Monaco:h16'
+  GuiFont Monaco:h16
 endif
 
 set lines=50
