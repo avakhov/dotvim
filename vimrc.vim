@@ -67,10 +67,6 @@ end
 " I like PostgreSQL
 let g:sql_type_default = 'pgsql'
 
-" NERD tree
-nmap <leader>t :NERDTreeToggle<cr>
-let NERDTreeShowHidden=1
-
 " remember cursor line (see /etc/vim/vimrc)
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
@@ -103,9 +99,6 @@ endfunction
 autocmd! BufNewFile *:* nested call s:gotoline()
 autocmd! BufRead *:* nested call s:gotoline()
 
-" EasyBuffer
-nmap <leader>b :EasyBuffer<cr>
-
 " Crazy MacVim
 set visualbell t_vb=
 
@@ -116,3 +109,9 @@ endif
 
 " redraw!
 command! Rd redraw!
+
+" leaders
+nmap <leader>b :EasyBuffer<cr>
+nmap <leader>t :NERDTreeToggle<cr>
+let NERDTreeShowHidden=1
+nmap <leader>n :tabnew<cr>

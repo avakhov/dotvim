@@ -7,19 +7,20 @@
 rm -fr ~/.vim &&
 git clone https://github.com/avakhov/dotvim.git ~/.vim &&
 echo "source ~/.vim/vimrc.vim" > ~/.vimrc &&
-~/.vim/update_bundles
+~/.vim/update_vim_bundles
 
 # neovim
 mkdir -p ~/.config &&
-git clone https://github.com/avakhov/dotvim.git ~/.config/nvim
+git clone https://github.com/avakhov/dotvim.git ~/.config/nvim &&
+~/.vim/update_nvim_bundles
 ```
 
 ## Update
 
 ```
 # vim
-pushd ~/.vim && git pull && ./update_bundles && popd
+pushd ~/.vim && git pull && ./update_vim_bundles && popd
 
 # neovim
-pushd ~/.config/nvim && git pull && popd
+pushd ~/.config/nvim && git pull && ./update_nvim_bundles && popd
 ```

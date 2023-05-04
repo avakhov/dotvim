@@ -93,3 +93,4 @@ done
 cmd="vim -e $vim_options -cquit"
 bash -c "${cmd}"
 echo Update helptags ... OK
+
