@@ -12,7 +12,7 @@ echo "source ~/.vim/vimrc.vim" > ~/.vimrc &&
 # neovim
 rm -fr ~/.config/nvim &&
 git clone https://github.com/avakhov/dotvim.git ~/.config/nvim &&
-~/.vim/update_nvim_bundles
+~/.config/nvim/update_nvim_bundles
 ```
 
 ## Update
