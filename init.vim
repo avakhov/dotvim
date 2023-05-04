@@ -10,7 +10,7 @@ endif
 hi link htmlTag                     xmlTag
 hi link htmlTagName                 xmlTagName
 hi link htmlEndTag                  xmlEndTag
-highlight Comment                   guifg=#0066ff gui=italic
+highlight Comment                   guifg=#0066ff
 highlight Normal                    guifg=#000000 guibg=#ddeedd
 highlight Cursor                    guifg=#ffffff guibg=#000000 
 highlight CursorLine                guibg=#ccddcc
