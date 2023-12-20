@@ -4,6 +4,7 @@ cd `dirname $0`
 
 git_bundles=(
 	https://github.com/github/copilot.vim
+  https://github.com/aklt/plantuml-syntax.git
   https://github.com/avakhov/vim-colors
   https://github.com/avakhov/vim-yaml
   https://github.com/b4b4r07/vim-hcl
