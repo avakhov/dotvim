@@ -10,6 +10,10 @@ set nowritebackup
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 " Pathogen and basic settings
+let g:pathogen_disabled = []
+if exists('$NO_COPILOT')
+  call add(g:pathogen_disabled, 'copilot.vim')
+endif
 call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
 set wh=1
@@ -115,9 +119,4 @@ nmap <leader>b :EasyBuffer<cr>
 nmap <leader>t :NERDTreeToggle<cr>
 let NERDTreeShowHidden=1
 nmap <leader>n :tabnew<cr>
-
-" disable copilot
-if exists('$NO_COPILOT')
-  autocmd VimEnter * Copilot disable
-endif
  
