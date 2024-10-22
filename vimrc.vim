@@ -115,3 +115,9 @@ nmap <leader>b :EasyBuffer<cr>
 nmap <leader>t :NERDTreeToggle<cr>
 let NERDTreeShowHidden=1
 nmap <leader>n :tabnew<cr>
+
+" disable copilot
+if exists('$NO_COPILOT')
+  autocmd VimEnter * Copilot disable
+endif
+ 
