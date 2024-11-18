@@ -60,8 +60,8 @@ nnoremap _ O<esc>
 if has("gui_running")
   set guifont=dejavu\ sans\ mono\ 11
   set guioptions-=T
-  set lines=50
-  set columns=188
+  set lines=30
+  set columns=130
   winp 1 1
 end
 if has("gui_macvim")
