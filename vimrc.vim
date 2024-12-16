@@ -11,9 +11,6 @@ set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 " Pathogen and basic settings
 let g:pathogen_disabled = []
-if exists('$NO_COPILOT')
-  call add(g:pathogen_disabled, 'copilot.vim')
-endif
 call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
 set wh=1
