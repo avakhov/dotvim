@@ -23,7 +23,7 @@ git_bundles=(
   https://github.com/posva/vim-vue
   https://github.com/rhysd/vim-crystal
   https://github.com/rust-lang/rust.vim
-  https://github.com/scrooloose/nerdtree
+  # https://github.com/scrooloose/nerdtree
   https://github.com/slim-template/vim-slim
   https://github.com/tomtom/tcomment_vim
   https://github.com/tpope/vim-fugitive

@@ -112,8 +112,8 @@ endif
 command! Rd redraw!
 
 " leaders
-nmap <leader>b :EasyBuffer<cr>
-nmap <leader>t :NERDTreeToggle<cr>
-let NERDTreeShowHidden=1
+" nmap <leader>b :EasyBuffer<cr>
+" nmap <leader>t :NERDTreeToggle<cr>
+" let NERDTreeShowHidden=1
 nmap <leader>n :tabnew<cr>
  
